@@ -3,6 +3,7 @@
 > [imagemin](https://github.com/imagemin/imagemin-app) as an OS X, Linux and Windows app
 
 
+<img src='media/sc.gif'>
 This project is modified to use electron
 and imagemin-jpeg-recompress 
 
