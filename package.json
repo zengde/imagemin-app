@@ -1,0 +1,47 @@
+{
+  "name": "imagemin-app",
+  "version": "1.0.0",
+  "description": "imagemin as an OS X, Linux and Windows app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zengde/imagemin-app.git"
+  },
+  "keywords": [
+    "Electron",
+    "imagemin"
+  ],
+  "author": "GitHub",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zengde/imagemin-app/issues"
+  },
+  "homepage": "https://github.com/zengde/imagemin-app#readme",
+  "dependencies": {
+    "suitcss-base":"^4.0.0",
+    "imagemin": "^6.0.0",
+    "imagemin-pngquant" : "^6.0.0",
+    "imagemin-jpeg-recompress":"^5.1.0",
+    "each-async":"^1.1.1",
+    "pretty-bytes":"^5.1.0",
+    "spin":"^0.0.1",
+    "component-drop":"^0.1.7",
+    "component-emitter":"^1.2.1",
+    "component-classes":"^1.2.6",
+    "component-closest":"^1.0.1",
+    "component-delegate":"^0.2.4",
+    "component-event":"^0.2.0",
+    "component-events":"^1.0.10",
+    "component-indexof":"^0.0.3",
+    "component-matches-selector":"^0.1.6",
+    "component-normalized-upload":"^0.0.6",
+    "component-query":"^0.0.3",
+    "normalize.css":"^7.0.0"
+  },
+  "devDependencies": {
+    "electron": "^2.0.2"
+  }
+}
