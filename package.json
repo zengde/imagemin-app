@@ -21,10 +21,10 @@
   },
   "homepage": "https://github.com/zengde/imagemin-app#readme",
   "dependencies": {
-    "suitcss-base":"^4.0.0",
-    "imagemin": "^6.0.0",
-    "imagemin-pngquant" : "^6.0.0",
-    "imagemin-jpeg-recompress":"^5.1.0",
+    "suitcss-base":"^5.0.0",
+    "imagemin": "^7.0.0",
+    "imagemin-pngquant" : "^8.0.0",
+    "imagemin-jpeg-recompress":"^6.0.0",
     "each-async":"^1.1.1",
     "pretty-bytes":"^5.1.0",
     "spin":"^0.0.1",
@@ -39,9 +39,9 @@
     "component-matches-selector":"^0.1.6",
     "component-normalized-upload":"^0.0.6",
     "component-query":"^0.0.3",
-    "normalize.css":"^7.0.0"
+    "normalize.css":"^8.0.1"
   },
   "devDependencies": {
-    "electron": "^2.0.2"
+    "electron": "^7.1.1"
   }
 }
