@@ -7,6 +7,7 @@
     margin-top: -32px;
     font-family: 'Helvetica Neue', Helvetica, sans-serif;
     text-align: center;
+    z-index: 1;
 }
 
 .Summary.is-visible {
@@ -22,4 +23,7 @@
 .Summary > p:last-child {
     font-size: 14px;
     font-weight: 200;
+}
+.Summary > p.error {
+    color: brown;
 }

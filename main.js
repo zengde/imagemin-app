@@ -1,59 +1,42 @@
-const electron = require('electron')
-// Module to control application life.
-const app = electron.app
-// Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow
+'use strict';
 
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
-let mainWindow
+const {app, BrowserWindow} = require('electron');
 
-function createWindow () {
-  // Create the browser window.
-  mainWindow = new BrowserWindow({
-    width: 475, 
-    height: 400,
-    icon:__dirname +  '/media/icon.png',
-    title:'Imagemin ' + app.getVersion(),
-    center:true
-  })
+/**
+ * Keep a global reference of the window object, if you don't, the window will
+ * be closed automatically when the javascript object is GCed
+ */
 
-  // and load the index.html of the app.
-  mainWindow.loadURL(`file://${__dirname}/index.html`)
+let win = null;
 
-  // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+/**
+ * Quit when all windows are closed
+ */
 
-  // Emitted when the window is closed.
-  mainWindow.on('closed', function () {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
-    mainWindow = null
-  })
-}
+app.on('window-all-closed', () => {
+	if (process.platform !== 'darwin') {
+		app.quit();
+	}
+});
 
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
-app.on('ready', createWindow)
+/**
+ * On ready
+ */
 
-// Quit when all windows are closed.
-app.on('window-all-closed', function () {
-  // On OS X it is common for applications and their menu bar
-  // to stay active until the user quits explicitly with Cmd + Q
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
-})
+app.on('ready', () => {
+	win = new BrowserWindow({
+		icon: './media/icon.png'
+	});
 
-app.on('activate', function () {
-  // On OS X it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
-  if (mainWindow === null) {
-    createWindow()
-  }
-})
+	win.setSize(475, 400);
+	win.center();
+	win.loadFile('index.html');
+	win.webContents.on('did-finish-load', () => {
+		win.setTitle('Imagemin ' + app.getVersion());
+	});
+	// Win.toggleDevTools();
 
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
+	win.on('closed', () => {
+		win = null;
+	});
+});
